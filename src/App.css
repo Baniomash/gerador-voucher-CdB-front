@@ -72,6 +72,16 @@
     padding: 0 27px;
     font-weight: 400;
 }
+.erroMsg{
+    color: #ff0000;
+    font-size: 14px;
+    line-height: 19.5px;
+    text-align: center;
+    margin-top: 23px;
+    margin-bottom: -23px;
+    padding: 0 27px;
+    font-weight: 400;
+}
 a{
     color: #A14400;
 }
