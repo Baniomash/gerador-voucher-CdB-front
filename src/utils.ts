@@ -1,11 +1,15 @@
+import { getVoucher } from "./services/api";
 import { ChangeDataProps, DataProps } from "./types";
 
-export function changeData(props: ChangeDataProps) {
+export async function changeData(props: ChangeDataProps): Promise<string>{
     if (verifyCpf(props.cpfInput) == false) {
         return 'CPF Inválido';
     } else {
-        // código para receber o voucher da API
-        let data: DataProps = { cpf: props.cpfInput, voucher: 2384577384153539, done: true };
+        const voucher = await getVoucher(props.cpfInput);
+        if(voucher == 'Ocorreu um erro'){
+            return voucher;
+        }
+        let data: DataProps = { cpf: props.cpfInput, voucher: voucher, done: true };
         props.setData(data);
         return 'Finalizado';
     }

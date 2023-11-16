@@ -6,11 +6,12 @@ import { FormEvent, useState } from 'react';
 function FormSection(props: FormSectionProps) {
     const [status, setStatus] = useState<InputsTextsStatus>();
   
-    function buttonStateChange(event: FormEvent) {
+    async function buttonStateChange(event: FormEvent) {
       event.preventDefault();
       setStatus({ inputsStatus: true, erroText: '' });
-      if (props.changeData({ setData: props.setData, cpfInput: props.cpfInput }) == 'CPF Inválido') {
-        setStatus({ inputsStatus: false, erroText: 'CPF Inválido' });
+      const result = await props.changeData({ setData: props.setData, cpfInput: props.cpfInput });
+      if (result == 'CPF Inválido' || result == 'Ocorreu um erro') {
+        setStatus({ inputsStatus: false, erroText: result });
       }
     }
   
