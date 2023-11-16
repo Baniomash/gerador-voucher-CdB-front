@@ -42,6 +42,20 @@
     text-align: center;
     outline: none;
 }
+.resultInput, .resultInput:disabled, .resultInput:focus{
+    width: 100%;
+    background-color: #fff;
+    color: #6D5353;
+    margin-top: 30px;
+    height: 54px;
+    padding: 10px;
+    border: 1px solid #CC1379;
+    border-radius: 5px;
+    gap: 10px;
+    text-align: center;
+    outline: none;
+    font-size: 20px;
+}
 .button{
     width: 100%;
     color: #fff;
