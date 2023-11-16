@@ -6,8 +6,9 @@ export async function changeData(props: ChangeDataProps): Promise<string>{
         return 'CPF Inválido';
     } else {
         const voucher = await getVoucher(props.cpfInput);
-        if(voucher == 'Ocorreu um erro'){
-            return voucher;
+        console.log(voucher);
+        if(voucher == 'Ocorreu um erro' || voucher == undefined){
+            return 'Ocorreu um erro';
         }
         let data: DataProps = { cpf: props.cpfInput, voucher: voucher, done: true };
         props.setData(data);
