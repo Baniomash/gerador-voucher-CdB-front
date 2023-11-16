@@ -1,13 +1,25 @@
-FROM node:21-alpine3.17
-WORKDIR /app/
+FROM node:21-alpine3.17 as BUILD_IMAGE
+WORKDIR /app/react-app
 
-RUN apt install git-all && git clone https://github.com/Baniomash/gerador-voucher-airdropv3-front.git
+COPY package.json .
 
-WORKDIR /app/gerador-voucher-airdropv3-front/
+RUN npm install
 
-RUN npm install && npm run build && npm i typescript
+COPY . .
 
+RUN npm run build
+
+FROM node:21-alpine3.17 as PRODUCTION_IMAGE
+WORKDIR /app/react-app
+
+COPY --from=BUILD_IMAGE /app/react-app/dist /app/react-app/dist/
 EXPOSE 8080
 
+COPY package.json .
+COPY vite.config.ts .
+
+RUN npm install typescript
+
+EXPOSE 8080
 CMD ["npm", "run", "preview" ]
 
