@@ -3,16 +3,15 @@ import { ChangeDataProps, DataProps } from "./types";
 
 export async function changeData(props: ChangeDataProps): Promise<string>{
     if (verifyCpf(props.cpfInput) == false) {
-        return 'CPF Inválido';
+        return import.meta.env.VITE_INVALID_CPF;
     } else {
         const voucher = await getVoucher(props.cpfInput);
-        console.log(voucher);
-        if(voucher == 'Ocorreu um erro' || voucher == undefined){
-            return 'Ocorreu um erro';
+        if(voucher == import.meta.env.VITE_CPF_ERROR || voucher === undefined){
+            return import.meta.env.VITE_CPF_ERROR;
         }
         let data: DataProps = { cpf: props.cpfInput, voucher: voucher, done: true };
         props.setData(data);
-        return 'Finalizado';
+        return import.meta.env.VITE_CPF_FINISH;
     }
 }
 

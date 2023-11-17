@@ -10,7 +10,7 @@ function FormSection(props: FormSectionProps) {
       event.preventDefault();
       setStatus({ inputsStatus: true, erroText: '' });
       const result = await props.changeData({ setData: props.setData, cpfInput: props.cpfInput });
-      if (result == 'CPF Inválido' || result == 'Ocorreu um erro' || result == undefined || result) {
+      if (result == import.meta.env.VITE_INVALID_CPF || result == import.meta.env.VITE_CPF_ERROR) {
         setStatus({ inputsStatus: false, erroText: result });
       }
     }
