@@ -14,8 +14,7 @@ function App() {
     <div>
       <main className='container'>
         <img className="image" src={imageLoja} alt="imagem da loja" />
-        {true ? <ResultSection voucher="165165148486515"/>
-        // {data?.done ? <ResultSection voucher={data.voucher}/>
+        {data?.done ? <ResultSection voucher={data.voucher}/>
           : <FormSection changeData={changeData} cpfInput={cpfInput} setCpfInput={setCpfInput} setData={setData} />}
       </main>
     </div>
