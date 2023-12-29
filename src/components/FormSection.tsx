@@ -17,8 +17,8 @@ function FormSection(props: FormSectionProps) {
   
     return (
       <section>
-        <h1 className='title'>ENTRE COM O SEU CPF PARA GERAR SEU CASHBACK</h1>
-        <h2 className='subtitle'>No clube da Jota suas compras valem vouchers que valem pontos. Cadastre-se Grátis e veja quais são os produtos disponíveis para trocar por pontos. Consulte os termos de uso da promoção.</h2>
+        <h1 className='title'>ENTRE COM O SEU CPF PARA GERAR SEU VOUCHER</h1>
+        <h2 className='subtitle'>No clube da Banca suas compras valem vouchers que valem pontos. Cadastre-se Grátis e veja quais são os produtos disponíveis para trocar por pontos. Consulte os termos de uso da promoção.</h2>
         <form onSubmit={buttonStateChange}>
           <p className='erroMsg'>{status?.erroText}</p>
           <InputMask

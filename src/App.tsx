@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import imageLoja from './assets/image.svg'
+import imageLoja from './assets/image.jpeg'
 import FormSection from './components/FormSection';
 import ResultSection from './components/ResultSection';
 import { DataProps } from './types';

@@ -8,8 +8,7 @@
         padding: 0 14px;
     }
     .image{
-        width: 498px;
-        height: 293px;
+        height: 250px;
     }
 }
 @media (max-width: 699px){
@@ -22,8 +21,7 @@
         padding: 0 14px;
     }
     .image{
-        width: 350px;
-        height: 293px;
+        height: 200px;
     }
 }
 .title{
@@ -52,7 +50,7 @@
     margin-top: 30px;
     height: 54px;
     padding: 10px;
-    border: 1px solid #CC1379;
+    border: 1px solid #403ce6;
     border-radius: 5px;
     gap: 10px;
     text-align: center;
@@ -65,7 +63,7 @@
     margin-top: 30px;
     height: 54px;
     padding: 10px;
-    border: 1px solid #CC1379;
+    border: 1px solid #403ce6;
     border-radius: 5px;
     gap: 10px;
     text-align: center;
@@ -84,14 +82,11 @@
     display: flex;
     text-align: center;
     justify-content: center;
-    background-color: #CC1379;
+    background-color: #403ce6;
     cursor: pointer;
 }
 .button:hover{
-    background-color: #a71063;
-}
-.button:active{
-    background-color: #c73b88;
+    background-color: #06b7ed;
 }
 .info{
     color: #000000;
